@@ -88,11 +88,11 @@ Meteor.methods({
     check(argument.ledStatus, Boolean);
     var led = "";
     if (argument.ledStatus) {
-      led = "ON";
+      led = "1";
     } else {
-      led = "OFF";
+      led = "0";
     }
-    var msg = "LED:" + led;
+    var msg = led;
 
     mqttClient.publish('arduino-day/command/' + argument.teamName, msg,
       function(error) {

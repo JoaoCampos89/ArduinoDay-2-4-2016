@@ -28,12 +28,12 @@ dht11 DHT11;
 
 // Update these with values suitable for your network.
 
-const char* ssid = "marco";
-const char* password = "19541954";
+const char* ssid = "ArduinoDay";
+const char* password = "arduinoday";
 //const char* mqtt_server = "test.mosquitto.org";
-const char* mqtt_server = "192.168.0.101";
+const char* mqtt_server = "10.6.3.108";
 //IPAddress mqtt_server(192, 168, 1, 4);
-const char *led = "LED:ON";
+const char *led = "ON";
 
 
 
@@ -165,9 +165,9 @@ void loop() {
 
     lastMsg = now;
     ++value;
-    sprintf(msg,"%d",value);
 
+    sprintf(msg, "%d",value);
     Serial.println(msg);
-    client.publish("arduino-day/team0/sensor/value", msg);
+    client.publish("arduino-day/team0/sensor/value",msg);
   }
 }
